@@ -1,10 +1,12 @@
 # pylint: disable=missing-module-docstring
 
 from src.game import character
+from src.game import location
 
- 
+actor = character.Character()
+actor.view_stats()
 
-name = input("Введи имя:")
-char_class = input("Введи класс:")
-
-actor = character.Character(name, char_class)
+while True:
+    command = input()
+    if command == 'q': 
+        break
