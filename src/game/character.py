@@ -13,8 +13,13 @@ class Character:
         """
         
         name = input("Введи имя:")
+        print("* Доступные классы :")
+        for item in CFG_CHARACTERS.items():
+            print(f"{str(item[0])} - {str(item[1]['name'])}")
+            
         char_class = input("Введи класс:")
-
+        
+        # Name
         self.name = name
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
@@ -25,22 +30,13 @@ class Character:
         self.exptolevelup = (self.lvl+1)*10
 
         # Chanses
-        self.chanses_to = {
-            "steal" : 0,
-            "up_param" : {
-                "str" : 0,
-                "" : 0,
-            }
-        }
-        
         # Inventory
-
         self.inventory = ""
 
     def view_stats(self):
         print(f"""
         **** **** **** **** **** **** **** ****
-        * Ты {self.char_class} по имени {self.name}.
+        * Ты {self.params['name']} по имени {self.name}.
         * У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
         **** **** **** **** **** **** **** ****
         * СИЛ:{self.params['attributes']['str']} ВОС:{self.params['attributes']['per']} 
