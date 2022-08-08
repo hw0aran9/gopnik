@@ -11,19 +11,19 @@ class Character:
         """
         init
         """
-        
+      
         name = input("Введи имя:")
         print("* Доступные классы :")
         for item in CFG_CHARACTERS.items():
             print(f"{str(item[0])} - {str(item[1]['name'])}")
-            
+ 
         char_class = input("Введи класс:")
-        
+
         # Name
         self.name = name
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
-        
+
         # Leveling
         self.exp = 0
         self.lvl = 0
