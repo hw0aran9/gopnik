@@ -9,5 +9,6 @@ while True:
     game.time += 1
     command = input()
     print(str(game.time))
-    if command == 'q': 
+    if command == 'q':
         game.over()
+        

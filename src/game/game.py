@@ -1,16 +1,25 @@
-class Game: 
+"""
+Модуль управления игрой
+"""
+import sys
+
+class Game:
     """
     Game class
     """
     def __init__(self):
         self.time = 0
 
-    def save(Character):
-        pass
+    def save(self):
+        """
+        save game
+        """
 
-    def load(Character):
-        pass
+    def load(self):
+        """
+        load
+        """
 
     def over(self):
         print('Game over!')
-        exit()
+        sys.exit()
