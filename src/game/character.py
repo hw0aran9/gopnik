@@ -1,22 +1,27 @@
+"""
+Модуль управления (не)игровым персонажем
+"""
+
 import json
+
 CFG_PATH = './cfg/'
 
 with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
     print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
 
-class Character:    
+class Character:
     """Класс персонажа"""
     def __init__(self):
         """
         init
         """
-      
+
         name = input("Введи имя:")
         print("* Доступные классы :")
         for item in CFG_CHARACTERS.items():
             print(f"{str(item[0])} - {str(item[1]['name'])}")
- 
+
         char_class = input("Введи класс:")
 
         # Name
@@ -34,9 +39,12 @@ class Character:
         self.inventory = ""
 
     def view_stats(self):
+        """
+        Отображение статистики персонажа
+        """
         print(f"""
         **** **** **** **** **** **** **** ****
-        * Ты {self.params['name']} по имени {self.name}.
+        * {self.params['name']} по имени {self.name}.
         * У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
         **** **** **** **** **** **** **** ****
         * СИЛ:{self.params['attributes']['str']} ВОС:{self.params['attributes']['per']} 
@@ -48,3 +56,18 @@ class Character:
         * {self.inventory}
         **** **** **** **** **** **** **** ****
         """)
+
+    def move_to(self, loc: Location):
+        """
+        Перемещение между локациями
+        """
+
+    def kick(self, char: Character):
+        """
+        Пинание
+        """
+
+    def steal():
+        """
+        Воровство денег
+        """

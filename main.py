@@ -1,5 +1,5 @@
 # pylint: disable=missing-module-docstring
-from src.game import game, character, location
+from src.game import game, character
 
 game = game.Game()
 actor = character.Character()

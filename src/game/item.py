@@ -10,3 +10,4 @@ class Item:
         self.price = 0
         self.name = ""
         self.slot = ""
+        
