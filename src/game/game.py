@@ -4,8 +4,8 @@
 управляет правилами игры. 
 """
 from abc import ABCMeta, abstractmethod
-from colorama import Fore, Back, Style
 import sys
+import random
 
 class Observer(metaclass=ABCMeta):
     """
@@ -51,6 +51,7 @@ class Game(Observer):
     """
     def __init__(self):
         self.time = 0
+        random.seed()
 
     def update(self, message:str) -> None:
         print(f"{self.name} notified about: {message}")

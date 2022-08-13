@@ -3,14 +3,15 @@
 from src.game.game import Game 
 from src.game.character import Character
 
-game = Game()
 
-game.greetings()
-actor = Character()
-actor.register(Game)
-actor.view_stats()
 
 if __name__ == '__main__':
+    game = Game()
+    game.greetings()
+    actor = Character()
+    actor.register(Game)
+    actor.view_stats()
+    
     while True:
         game.time += 1
         command = input()
