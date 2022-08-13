@@ -11,6 +11,7 @@ if __name__ == '__main__':
     actor = Character()
     actor.register(Game)
     actor.view_stats()
+    actor.show_observers()
     
     while True:
         game.time += 1

@@ -47,7 +47,9 @@ class Observable(metaclass=ABCMeta):
 
 class Game(Observer):
     """
-    Game class
+    Основной класс игры. 
+    Управляет, отслеживает, 
+    списывает, начисляет. 
     """
     def __init__(self):
         self.time = 0

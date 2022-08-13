@@ -11,12 +11,13 @@ with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
     print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
 
-class Character(Observable):
+class Character(Observable): #TODO вынести логику создания игрока в отдельный класс
     """Класс персонажа"""
     def __init__(self):
         """
         init
         """
+        super().__init__()
 
         name = input("Введи имя:")
         print("* Доступные классы :")
@@ -64,7 +65,7 @@ class Character(Observable):
         Перемещение между локациями
         """
 
-    def kick(self):
+    def kick(self, enemy) -> None:
         """
         Пинание
         """
@@ -73,3 +74,6 @@ class Character(Observable):
         """
         Воровство денег
         """
+    
+    def show_observers(self):
+        print(str(self.observers))
