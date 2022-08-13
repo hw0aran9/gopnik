@@ -38,7 +38,7 @@ class Character(Observable):
         # Chanses
         # Inventory
         self.inventory = ""
-        
+
 
     def view_stats(self):
         """
