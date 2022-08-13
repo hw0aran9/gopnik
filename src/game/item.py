@@ -1,8 +1,9 @@
 """
-Модуль управления внутриигровыми предметами
+Модуль управления игровым шмотом. 
 """
+from .game import Observable, Observer
 
-class Item:
+class Item(Observable, Observer):
     """
     Класс внутриигрового предмета
     """

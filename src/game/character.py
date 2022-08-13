@@ -3,6 +3,7 @@
 """
 
 import json
+from .game import Observable
 
 CFG_PATH = './cfg/'
 
@@ -10,7 +11,7 @@ with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
     print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
 
-class Character:
+class Character(Observable):
     """Класс персонажа"""
     def __init__(self):
         """
@@ -37,6 +38,7 @@ class Character:
         # Chanses
         # Inventory
         self.inventory = ""
+        
 
     def view_stats(self):
         """
@@ -57,12 +59,12 @@ class Character:
         **** **** **** **** **** **** **** ****
         """)
 
-    def move_to(self, loc: Location):
+    def move_to(self):
         """
         Перемещение между локациями
         """
 
-    def kick(self, char: Character):
+    def kick(self):
         """
         Пинание
         """
