@@ -132,3 +132,5 @@ dmypy.json
 zbx_env/
 kafka
 zk_*
+
+.DS_Store

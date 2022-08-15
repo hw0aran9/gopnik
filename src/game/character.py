@@ -40,16 +40,12 @@ class Character(Observable): #TODO вынести логику создания 
         """
         print(f"""
         **** **** **** **** **** **** **** ****
-        * {self.params['name']} по имени {self.name}.
-        * У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
+        * Это {self.params['name']} по имени {self.name}.
         **** **** **** **** **** **** **** ****
         * СИЛ:{self.params['attributes']['str']} ВОС:{self.params['attributes']['per']} 
         * ВЫН:{self.params['attributes']['end']} ЛОВ:{self.params['attributes']['agi']}
         * ХАР:{self.params['attributes']['cha']} ИНТ:{self.params['attributes']['int']} 
         * УДЧ:{self.params['attributes']['luc']}
-        **** **** **** **** **** **** **** ****
-        * Инвентарь: 
-        * {self.inventory}
         **** **** **** **** **** **** **** ****
         """)
 

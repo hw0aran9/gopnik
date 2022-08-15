@@ -12,9 +12,9 @@ class Observer(metaclass=ABCMeta):
     Абстрактный класс-наблюдатель
     """
     @abstractmethod
-    def update(self, message:str) -> None: 
+    def handle(self, message:str) -> None: 
         """
-        Получение нового сообщения
+        Обработка нового сообщения
         """
         pass
 
@@ -31,7 +31,7 @@ class Observable(metaclass=ABCMeta):
 
     def register(self, observer: Observer) -> None:
         """
-        Регистрация нового наблюдателя за классом
+        Подписать на экземпляр класса нового наблюдателя
         """
         self.observers.append(observer)
         print(f"registered {str(observer)} as observer.")
@@ -43,7 +43,7 @@ class Observable(metaclass=ABCMeta):
         наблюдаемого класса
         """
         for obs in self.observers:
-            obs.update(message)
+            obs.handle(message)
 
 class Game(Observer):
     """
@@ -55,7 +55,7 @@ class Game(Observer):
         self.time = 0
         random.seed()
 
-    def update(self, message:str) -> None:
+    def handle(self, message:str) -> None:
         print(f"{self.name} notified about: {message}")
 
     def greetings(self):
@@ -83,6 +83,4 @@ class Game(Observer):
 
     def over(self):
         print('Game over!')
-        sys.exit()
-
-    
+        sys.exit(0)
