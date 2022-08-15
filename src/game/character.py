@@ -31,7 +31,7 @@ class Character(Observable): #TODO вынести логику создания 
 
         # Chanses
         # Inventory
-        self.inventory = ""
+        self.inventory = []
 
 
     def view_stats(self):

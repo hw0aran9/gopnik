@@ -1,6 +1,6 @@
-from .game import Actor
+from .actor import Actor
 
-class CommandHandler(): 
+class Command(): 
     """
     Команды игрового движка
     """
