@@ -11,11 +11,21 @@
             "int" : 2,
             "cha" : 3,
             "luc" : 2
-        }
+        },
+        "advantages": {
+            "girl" : true,
+            "phone": false,
+            "sunglasses": true,
+            "tattoo" : false,
+            "price_coeffs": {
+                "gym" : 0.5
+            }
+        },
+        "discovered_locations": ["club"]
     },
     "2": {
         "name" : "Отморозок",
-        "desc" : "Ты из неблагополучной семьи, учеба идёт из рук вон плохо. \nЕдинственная радость - это бухло, турник и бесплатная качалка у знакомого. \nЗато и если врежешь кому, мало не покажется",
+        "desc" : "Ты из неблагополучной семьи, учеба идет из рук вон плохо. \nЕдинственная радость - бухло, турник и дешёвая качалка у знакомого. \nЗато и если врежешь кому, мало не покажется",
         "replies" : {},
         "attributes" : {
             "str" : 7, 
@@ -25,7 +35,17 @@
             "int" : 1,
             "cha" : 1,
             "luc" : 1
-        } 
+        } ,
+        "advantages": {
+            "girl" : false,
+            "phone": false,
+            "sunglasses": false,
+            "tattoo" : false,
+            "price_coeffs": {
+                "gym" : 0.5
+            }
+        },
+        "discovered_locations": []
     },
     "3": {
         "name" : "Гопник",
@@ -39,7 +59,17 @@
             "int" : 2,
             "cha" : 1,
             "luc" : 1
-        } 
+        } ,
+        "advantages": {
+            "girl" : false,
+            "phone": true,
+            "sunglasses": false,
+            "tattoo" : true,
+            "price_coeffs": {
+                "gym" : 0.5
+            }
+        },
+        "discovered_locations": ["priton"]
     },
     "4": {
         "name" : "Вор",
@@ -53,7 +83,17 @@
             "int" : 1,
             "cha" : 2,
             "luc" : 5
-        } 
+        } ,
+        "advantages": {
+            "girl" : false,
+            "phone": false,
+            "sunglasses": false,
+            "tattoo" : false,
+            "price_coeffs": {
+                "gym" : 0.5
+            }
+        },
+        "discovered_locations": ["black_market"]
     },
     "5": {
         "name" : "Интеллигент",
@@ -67,6 +107,16 @@
             "int" : 8,
             "cha" : 3,
             "luc" : 1
-        } 
+        } ,
+        "advantages": {
+            "girl" : false,
+            "phone": false,
+            "sunglasses": false,
+            "tattoo" : false,
+            "price_coeffs": {
+                "gym" : 0.5
+            }
+        },
+        "discovered_locations": []
     }
 }

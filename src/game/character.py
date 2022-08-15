@@ -49,10 +49,6 @@ class Character(Observable): #TODO вынести логику создания 
         **** **** **** **** **** **** **** ****
         """)
 
-    def move_to(self):
-        """
-        Перемещение между локациями
-        """
 
     def kick(self, enemy) -> None:
         """

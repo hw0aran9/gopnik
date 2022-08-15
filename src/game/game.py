@@ -3,6 +3,8 @@
 Отслеживает изменения  объектов игры, 
 управляет правилами игры. 
 """
+CFG_PATH = './cfg/'
+import json
 from abc import ABCMeta, abstractmethod
 import sys
 import random
@@ -34,8 +36,7 @@ class Observable(metaclass=ABCMeta):
         Подписать на экземпляр класса нового наблюдателя
         """
         self.observers.append(observer)
-        print(f"registered {str(observer)} as observer.")
-
+        print(f"registered {str(observer.__repr__)} as observer.")
     def notify_observers(self, message:str) -> None:
         """
         Уведомление всем наблюдателям, 
@@ -53,12 +54,20 @@ class Game(Observer):
     """
     def __init__(self):
         self.time = 0
+        self.name = 'Dungeon master'
         random.seed()
 
     def handle(self, message:str) -> None:
+        with open(CFG_PATH+'events.json', 'r', encoding='utf-8') as j:
+            CFG_EVENTS = json.loads(j.read())
+        
+        match message:
+            case 'actor_walked':
+                print(str(random.choice(CFG_EVENTS[message])))
+        
         print(f"{self.name} notified about: {message}")
 
-    def greetings(self):
+    def greet(self):
         LINES = [
       "┌─── ┌───┐ ┌───┐ ╷   ╷ ╷   ╷ ╷   ╷",
       "│    │   │ │   │ │   │ │   │ │  ╱ ",
@@ -70,6 +79,10 @@ class Game(Observer):
       "╵    └───┘ ╵   ╵ ╵   ╵ ╵   ╵ ╵   ╵",
       "          Беспредел в Ульяновске  ",
     ]
+
+    def play(self, cutscene): 
+        #TODO в cutscenes.json подумать над более универсальной структурой для проигрываемых сценок, добавить интерактивность, запросы вариантов
+        pass
 
     def save(self):
         """

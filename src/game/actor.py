@@ -31,16 +31,24 @@ class Actor(Character):
         Отображение статистики персонажа
         """
         print(f"""
-        **** **** **** **** **** **** **** ****
-        * Ты {self.params['name']} по имени {self.name}.
-        * У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
-        **** **** **** **** **** **** **** ****
-        * СИЛ:{self.params['attributes']['str']} ВОС:{self.params['attributes']['per']} 
-        * ВЫН:{self.params['attributes']['end']} ЛОВ:{self.params['attributes']['agi']}
-        * ХАР:{self.params['attributes']['cha']} ИНТ:{self.params['attributes']['int']} 
-        * УДЧ:{self.params['attributes']['luc']}
-        **** **** **** **** **** **** **** ****
-        * Инвентарь: 
-        * {self.inventory}
-        **** **** **** **** **** **** **** ****
+        ┌────────────────────────────────────────────────
+        │ Ты {self.params['name']} по имени {self.name}.
+        │ У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
+        ├────────────────────────────────────────────────
+        │ СИЛ:{self.params['attributes']['str']} ВОС:{self.params['attributes']['per']} ВЫН:{self.params['attributes']['end']}
+        │ ЛОВ:{self.params['attributes']['agi']} ХАР:{self.params['attributes']['cha']} ИНТ:{self.params['attributes']['int']} 
+        │ УДЧ:{self.params['attributes']['luc']}
+        ├────────────────────────────────────────────────
+        │ Инвентарь: 
+        │ {self.inventory}
+        └────────────────────────────────────────────────
         """)
+
+    def move_to(self):
+        """
+        Перемещение между игровыми локациями
+        """
+        pass
+
+    def walk(self):
+        Game().handle('actor_walked')

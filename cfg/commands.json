@@ -1,0 +1,33 @@
+{
+    "idle": {
+        "w" : "actor_walked",
+        "k" : "actor_kicked",
+        "mar" : "actor_walked_to_market",
+        "bmar" : "actor_walked_to_blackmarket",
+        "pr" : "actor_walked_to_den",
+        "help" : "actor_requested_help",
+        "i" : "actor_requested_command_list",
+        "s" : "actor_requested_his_stats",
+        "sv" : "actor_requested_enemy_stats",
+        "h" : "actor_healed",
+        "mh" : "actor_megahealed",
+        "dbg_spawn" : "debug_spawn_enemy",
+        "dbg_kill" : "debug_kill_enemy",
+        "q" : "quit"
+    },
+    "market" : {
+        "w" : "actor_walked_to_idle",
+        "t" : "actor_stole_money"
+
+    },
+    "battle" : {
+        "k" : "actor_kicked",
+        "run": "actor_ran",
+        "sv" : "actor_requested_enemy_stats",
+        "s" : "actor_requested_his_stats"
+    },
+    "gym" : {},
+    "black_market" : {},
+    "den" : {}
+
+}
