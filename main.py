@@ -15,7 +15,7 @@ if __name__ == '__main__':
     game = Game()
     game.greetings()
 
-    name = input("Введи имя:")
+    name = input("Введи1 имя:")
     print("* Доступные классы :")
     for item in CFG_CHARACTERS.items():
         print(f"{str(item[0])} - {str(item[1]['name'])}")
@@ -23,8 +23,8 @@ if __name__ == '__main__':
     char_class = input("Введи класс:")
 
 
-    actor = Actor()
-    actor.register(Game)
+    actor = Actor(name, char_class)
+    
     actor.view_stats()
     actor.show_observers()
     
