@@ -4,17 +4,21 @@
 CFG_PATH = './cfg/'
 
 import json
+from transitions import Machine
 from .character import Character
 from .game import Game
 
 with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
-    print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
+
+with open(CFG_PATH+'locations.json', 'r', encoding='utf-8') as j:
+    CFG_LOCATIONS = json.loads(j.read())
 
 class Actor(Character):
     """
     Player class
     """
+    states = list(CFG_LOCATIONS.keys())
     def __init__(self, name, char_class):
         """
         init
@@ -25,6 +29,11 @@ class Actor(Character):
         self.name = name
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
+
+        self.transitions = #TODO вынести это в конфиг
+        
+        #state machine
+        self.machine = Machine(model=self, states=Actor.states, initial='l00_idle')
 
     def view_stats(self):
         """

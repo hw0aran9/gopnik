@@ -17,7 +17,9 @@
     },
     "market" : {
         "w" : "actor_walked_to_idle",
-        "t" : "actor_stole_money"
+        "t" : "actor_stole_money",
+        "h" : "actor_ate_shavukha",
+        "buy" : "actor_requested_purchase"
 
     },
     "battle" : {

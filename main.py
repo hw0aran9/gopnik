@@ -7,7 +7,6 @@ from src.game.command import Command
 CFG_PATH = './cfg/'
 global g_some_var
 with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
-    print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
 
 def main():
