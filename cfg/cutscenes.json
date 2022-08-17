@@ -33,7 +33,7 @@
     "intro2": [
         {"type": "text", "value": "1"},
         {"type": "eval", "value": "print('хуй')"},
-        {"type": "eval", "value": "eval(a=input('введи чето', {'a':g_some_var})"}
+        {"type": "eval", "value": "a=input('введи чето')"}
     ]
 
 }

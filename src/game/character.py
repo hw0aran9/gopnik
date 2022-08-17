@@ -3,15 +3,15 @@
 """
 
 import json
+
 from .game import Observable
 
 CFG_PATH = './cfg/'
 
 with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
-    print(CFG_PATH+'characters.json')
     CFG_CHARACTERS = json.loads(j.read())
 
-class Character(Observable): #TODO вынести логику создания игрока в отдельный класс
+class Character(Observable):
     """Класс персонажа"""
     def __init__(self, name, char_class):
         """
