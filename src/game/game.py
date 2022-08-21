@@ -67,8 +67,10 @@ class Game(Observer):
         match message:
             case 'actor_walked':
                 print(str(random.choice(CFG_EVENTS[message])))
-        
-        print(f"{self.name} notified about: {message}")
+            case 'actor_walked_to_market': 
+                print(str(random.choice(CFG_EVENTS[message])))
+
+        print(f"{self.name} notified that {message}")
 
     def greet(self):
         LINES = [

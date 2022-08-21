@@ -1,0 +1,25 @@
+[
+
+    { "trigger": "to_battle", "source": "l00_idle", "dest": "l01_battle" },
+    { "trigger": "to_battle", "source": "l02_market", "dest": "l01_battle" },
+    { "trigger": "to_battle", "source": "l05_club", "dest": "l01_battle" },
+    { "trigger": "to_battle", "source": "l06_den", "dest": "l01_battle" },
+    
+    { "trigger": "to_idle", "source": "l01_battle", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l02_market", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l03_gym", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l04_black_market", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l05_club", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l06_den", "dest": "l00_idle" },
+
+    { "trigger": "to_market", "source": "l00_idle", "dest": "l02_market" },
+
+    { "trigger": "to_gym", "source": "l00_idle", "dest": "l03_gym" },
+
+    { "trigger": "to_black_market", "source": "l00_idle", "dest": "l04_black_market" },
+
+    { "trigger": "to_club", "source": "l00_idle", "dest": "l05_club" },
+
+    { "trigger": "to_den", "source": "l00_idle", "dest": "l06_den" },
+    { "trigger": "to_den", "source": "l01_battle", "dest": "l06_den" }
+]

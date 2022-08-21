@@ -30,8 +30,14 @@ def main():
             game.over()
         elif command == 'w':
             actor.walk()
+            actor.to_idle()
         elif command == 'time': 
             print(game.time)
+        elif command == 'mar':
+            actor.to_market()
+            actor.move_to('l02_market')
+        elif command == 'i':
+            actor.view_stats()
 
 if __name__ == '__main__':
     main()

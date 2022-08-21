@@ -14,11 +14,15 @@ with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
 with open(CFG_PATH+'locations.json', 'r', encoding='utf-8') as j:
     CFG_LOCATIONS = json.loads(j.read())
 
+with open(CFG_PATH+'transitions.json', 'r', encoding='utf-8') as j:
+    CFG_TRANSITIONS = json.loads(j.read())
+
 class Actor(Character):
     """
     Player class
     """
     states = list(CFG_LOCATIONS.keys())
+    transitions = list(CFG_TRANSITIONS)
     def __init__(self, name, char_class):
         """
         init
@@ -29,17 +33,20 @@ class Actor(Character):
         self.name = name
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
-
-        self.transitions = #TODO вынести это в конфиг
         
+        
+        
+
         #state machine
-        self.machine = Machine(model=self, states=Actor.states, initial='l00_idle')
+        self.machine = Machine(model=self, states=Actor.states, transitions=Actor.transitions, initial='l00_idle')
+        print ('машына готова')
 
     def view_stats(self):
         """
         Отображение статистики персонажа
         """
         print(f"""
+        Ты находишься на локации: {self.state}
         ┌────────────────────────────────────────────────
         │ Ты {self.params['name']} по имени {self.name}.
         │ У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
@@ -53,11 +60,13 @@ class Actor(Character):
         └────────────────────────────────────────────────
         """)
 
-    def move_to(self):
+    def move_to(self, destination):
         """
         Перемещение между игровыми локациями
         """
-        pass
+        match destination:
+            case 'l02_market': 
+                Game().handle('actor_walked_to_market')
 
     def walk(self):
         Game().handle('actor_walked')

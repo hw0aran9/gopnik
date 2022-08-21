@@ -34,7 +34,7 @@ class Character(Observable):
         self.inventory = []
 
 
-    def view_stats(self):
+    def view_stats(self): # перенести в класс игры 
         """
         Отображение статистики персонажа
         """
