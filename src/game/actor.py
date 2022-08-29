@@ -34,12 +34,10 @@ class Actor(Character):
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
         
-        
-        
-
-        #state machine
+    
+        # Конечный автомат, описывающий допустимые переходы
+        # между игровыми уровнями
         self.machine = Machine(model=self, states=Actor.states, transitions=Actor.transitions, initial='l00_idle')
-        print ('машына готова')
 
     def view_stats(self):
         """
