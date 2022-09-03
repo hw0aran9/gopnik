@@ -3,16 +3,22 @@ import json
 from src.game.game import Game 
 from src.game.actor import Actor
 from src.game.command import Command
+from src.game.cutscene import *
 
 CFG_PATH = './cfg/'
 global g_some_var
 with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
     CFG_CHARACTERS = json.loads(j.read())
 
+with open(CFG_PATH+'cutscenes.json', 'r', encoding='utf-8') as j:
+    CFG_CUTSCENES = json.loads(j.read())
+
 def main():
     game = Game()
     game.greet()
-    game.play("intro2")
+    
+    th = TextHandler()
+    th.handle(CFG_CUTSCENES['intro'])
 
     name = input("Введи имя:")
     print("* Доступные классы :")
@@ -23,6 +29,8 @@ def main():
     actor = Actor(name, char_class)
     actor.view_stats()
     
+    print(game.__dict__)
+
     while True:
         game.time += 1
         command = input()
@@ -30,11 +38,9 @@ def main():
             game.over()
         elif command == 'w':
             actor.walk()
-            actor.to_idle()
         elif command == 'time': 
-            print(game.time)
+            print(str(game.time))
         elif command == 'mar':
-            actor.to_market()
             actor.move_to('l02_market')
         elif command == 'i':
             actor.view_stats()

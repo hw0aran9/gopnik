@@ -1,5 +1,4 @@
 [
-
     { "trigger": "to_battle", "source": "l00_idle", "dest": "l01_battle" },
     { "trigger": "to_battle", "source": "l02_market", "dest": "l01_battle" },
     { "trigger": "to_battle", "source": "l05_club", "dest": "l01_battle" },
@@ -11,8 +10,10 @@
     { "trigger": "to_idle", "source": "l04_black_market", "dest": "l00_idle" },
     { "trigger": "to_idle", "source": "l05_club", "dest": "l00_idle" },
     { "trigger": "to_idle", "source": "l06_den", "dest": "l00_idle" },
+    { "trigger": "to_idle", "source": "l00_idle", "dest": "l00_idle" },
 
     { "trigger": "to_market", "source": "l00_idle", "dest": "l02_market" },
+    { "trigger": "to_market", "source": "l02_market", "dest": "l02_market" },
 
     { "trigger": "to_gym", "source": "l00_idle", "dest": "l03_gym" },
 

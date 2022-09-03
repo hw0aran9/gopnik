@@ -9,6 +9,7 @@ from abc import ABCMeta, abstractmethod
 import sys
 import random
 CFG_PATH = './cfg/'
+
 with open(CFG_PATH+'events.json', 'r', encoding='utf-8') as j:
     CFG_EVENTS = json.loads(j.read())
 
@@ -67,6 +68,7 @@ class Game(Observer):
         match message:
             case 'actor_walked':
                 print(str(random.choice(CFG_EVENTS[message])))
+                self.time += 1
             case 'actor_walked_to_market': 
                 print(str(random.choice(CFG_EVENTS[message])))
 
@@ -81,37 +83,14 @@ class Game(Observer):
       "│    │   │ │   │ │   │ │ ╱ │ │╲   ",
       "│    │   │ │   │ │   │ │╱  │ │ ╲  ",
       "│    │   │ │   │ │   │ │   │ │  ╲ ",
-      "╵    └───┘ ╵   ╵ ╵   ╵ ╵   ╵ ╵   ╵",
-      "          Беспредел в Ульяновске  ",
-    ]
+      "╵    └───┘ ╵   ╵ ╵   ╵ ╵   ╵ ╵   ╵"
 
-    # def play(self, cutscene:str): 
-    #     #TODO в cutscenes.json подумать над более универсальной структурой для 
-    #     # проигрываемых сценок, добавить интерактивность, запросы вариантов
-    #     # пока сделал на eval(), а там видно будет
-    #     # возможно, потом надо будет заморочиться Factory pattern
-    #     try: 
-    #         cutscene_to_play = list(CFG_CUTSCENES[cutscene])
-    #         if not isinstance(cutscene_to_play, list):
-    #             raise Exception('Error. Configured cutscene is not a list or valid json.')
-    #         for item in cutscene_to_play:
-    #             if item["type"] == 'text': 
-    #                 print(item["value"])
-    #             elif item["type"] == 'eval':
-    #                 try:
-    #                     eval(str(item["value"]))
-    #                 except:
-    #                     print(f'Error. Failed to eval {item["value"]}')
-    #             else:
-    #                 raise Exception('Error. Wrong cutscene item type.')
-    #         print('Cutscene played.')
-    #     except:
-    #         raise Exception('Error. Cutscene not found.')
+    ]
+        for line in LINES:
+            print(line)
 
     def play_scene(self, scene:str):
         pass
-
-
 
     def save(self):
         """

@@ -34,9 +34,8 @@ class Actor(Character):
         self.char_class = char_class
         self.params = CFG_CHARACTERS[char_class]
         
-    
-        # Конечный автомат, описывающий допустимые переходы
-        # между игровыми уровнями
+        # Конечный автомат, описывающий допустимые 
+        # переходы между игровыми уровнями
         self.machine = Machine(model=self, states=Actor.states, transitions=Actor.transitions, initial='l00_idle')
 
     def view_stats(self):
@@ -64,7 +63,9 @@ class Actor(Character):
         """
         match destination:
             case 'l02_market': 
+                self.to_market()
                 Game().handle('actor_walked_to_market')
 
     def walk(self):
+        self.to_idle()
         Game().handle('actor_walked')

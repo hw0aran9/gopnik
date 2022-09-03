@@ -3,7 +3,6 @@
 """
 
 import json
-
 from .game import Observable
 
 CFG_PATH = './cfg/'
