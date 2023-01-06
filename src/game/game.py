@@ -84,7 +84,6 @@ class Game(Observer):
       "│    │   │ │   │ │   │ │╱  │ │ ╲  ",
       "│    │   │ │   │ │   │ │   │ │  ╲ ",
       "╵    └───┘ ╵   ╵ ╵   ╵ ╵   ╵ ╵   ╵"
-
     ]
         for line in LINES:
             print(line)
