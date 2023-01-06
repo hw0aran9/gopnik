@@ -1,9 +1,8 @@
 import json
 from .actor import Actor
+from .config import GAMEDATA_PATH
 
-CFG_PATH = './cfg/'
-
-with open(CFG_PATH+'commands.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'commands.json', 'r', encoding='utf-8') as j:
     CFG_COMMANDS = json.loads(j.read())
 
 

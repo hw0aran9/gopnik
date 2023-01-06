@@ -1,0 +1,7 @@
+{
+    "base_proba" : {
+        "to_meet": {
+            "enemy" : 0.1
+        }
+    }
+}

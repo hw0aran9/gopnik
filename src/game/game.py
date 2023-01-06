@@ -8,12 +8,12 @@ import json
 from abc import ABCMeta, abstractmethod
 import sys
 import random
-CFG_PATH = './cfg/'
+from .config import GAMEDATA_PATH
 
-with open(CFG_PATH+'events.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'events.json', 'r', encoding='utf-8') as j:
     CFG_EVENTS = json.loads(j.read())
 
-with open(CFG_PATH+'cutscenes.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'cutscenes.json', 'r', encoding='utf-8') as j:
     CFG_CUTSCENES = json.loads(j.read())
 
 class Observer(metaclass=ABCMeta):
@@ -65,10 +65,10 @@ class Game(Observer):
         random.seed()
 
     def handle(self, message:str) -> None:
+        self.time += 1
         match message:
             case 'actor_walked':
                 print(str(random.choice(CFG_EVENTS[message])))
-                self.time += 1
             case 'actor_walked_to_market': 
                 print(str(random.choice(CFG_EVENTS[message])))
 
@@ -104,3 +104,4 @@ class Game(Observer):
     def over(self):
         print('Game over!')
         sys.exit(0)
+        

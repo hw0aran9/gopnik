@@ -1,11 +1,14 @@
+import sys, os
+
 class Gamedata:
     """
     Управление игровыми данными, загружаемыми из файлов
+    Файлы из папки с игровыми данными 
+    загружаются в оперативную память.
     """
 
-    def __init__(self, path: str):
-        self.data = None
-        self.path = path
+    def __init__(self):
+        self.content = None
 
-    def load_data(self, gamedata):
+    def load(self, path):
         pass 

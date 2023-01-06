@@ -1,20 +1,20 @@
 """
 Модуль управления игроком
 """
-CFG_PATH = './cfg/'
 
 import json
 from transitions import Machine
 from .character import Character
 from .game import Game
+from .config import GAMEDATA_PATH
 
-with open(CFG_PATH+'characters.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'characters.json', 'r', encoding='utf-8') as j:
     CFG_CHARACTERS = json.loads(j.read())
 
-with open(CFG_PATH+'locations.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'locations.json', 'r', encoding='utf-8') as j:
     CFG_LOCATIONS = json.loads(j.read())
 
-with open(CFG_PATH+'transitions.json', 'r', encoding='utf-8') as j:
+with open(GAMEDATA_PATH+'transitions.json', 'r', encoding='utf-8') as j:
     CFG_TRANSITIONS = json.loads(j.read())
 
 class Actor(Character):
