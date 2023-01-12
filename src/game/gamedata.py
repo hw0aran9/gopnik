@@ -9,6 +9,3 @@ class Gamedata:
 
     def __init__(self):
         self.content = None
-
-    def load(self, path):
-        pass 
