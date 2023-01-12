@@ -44,6 +44,7 @@ class Actor(Character):
         """
         print(f"""
         Ты находишься на локации: {self.state}
+        {self.params}
         ┌────────────────────────────────────────────────
         │ Ты {self.params['name']} по имени {self.name}.
         │ У тебя {self.exp} качков опыта, а для прокачки надо {self.exptolevelup}.
@@ -62,7 +63,7 @@ class Actor(Character):
         Перемещение между игровыми локациями
         """
         match destination:
-            case 'l02_market': 
+            case 'l02_market':
                 self.to_market()
                 Game().handle('actor_walked_to_market')
 

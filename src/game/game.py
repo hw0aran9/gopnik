@@ -8,6 +8,7 @@ import json
 from abc import ABCMeta, abstractmethod
 import sys
 import random
+from art import tprint
 from .config import GAMEDATA_PATH
 
 with open(GAMEDATA_PATH+'events.json', 'r', encoding='utf-8') as j:
@@ -21,7 +22,7 @@ class Observer(metaclass=ABCMeta):
     Абстрактный класс-наблюдатель
     """
     @abstractmethod
-    def handle(self, message:str) -> None: 
+    def handle(self, message:str) -> None:
         """
         Обработка нового сообщения
         """
@@ -65,31 +66,20 @@ class Game(Observer):
         random.seed()
 
     def handle(self, message:str) -> None:
-        self.time += 1
         match message:
             case 'actor_walked':
+                self.time +=1
                 print(str(random.choice(CFG_EVENTS[message])))
-            case 'actor_walked_to_market': 
-                print(str(random.choice(CFG_EVENTS[message])))
+            case 'actor_walked_to_market':
+                self.time +=1
+                print('Ты пришел на рынок')
+            case 'char_kicked':
+                print('Игра: Подтверждаю - пинок был осуществлен.,l')
 
         print(f"{self.name} notified that {message}")
 
     def greet(self):
-        LINES = [
-      "┌─── ┌───┐ ┌───┐ ╷   ╷ ╷   ╷ ╷   ╷",
-      "│    │   │ │   │ │   │ │   │ │  ╱ ",
-      "│    │   │ │   │ │   │ │   │ │ ╱  ",
-      "│    │   │ │   │ ├───┤ │  ╱│ │╱   ",
-      "│    │   │ │   │ │   │ │ ╱ │ │╲   ",
-      "│    │   │ │   │ │   │ │╱  │ │ ╲  ",
-      "│    │   │ │   │ │   │ │   │ │  ╲ ",
-      "╵    └───┘ ╵   ╵ ╵   ╵ ╵   ╵ ╵   ╵"
-    ]
-        for line in LINES:
-            print(line)
-
-    def play_scene(self, scene:str):
-        pass
+        tprint("Klon Gopnika")
 
     def save(self):
         """
@@ -102,6 +92,6 @@ class Game(Observer):
         """
 
     def over(self):
-        print('Game over!')
+        tprint('GAME OVER')
         sys.exit(0)
         

@@ -1,0 +1,19 @@
+{
+    "districts": {
+        "d_00_Zheleznodorozhny" : {
+            "verbose_name" : "Железнодорожный",
+            "streets" : [
+                "Локомотивная",
+                "Пушкинская",
+                "12 сентября"
+            ],
+            "periodical_effects" : {
+                "motherland_bonuses" : {},
+                "damage" : {}
+            }
+        },
+        "d_01_Leninsky" : {},
+        "d_02_Zavolzhsky" : {},
+        "d_03_Zasviyazhsky" : {}
+    }
+}

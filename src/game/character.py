@@ -3,7 +3,7 @@
 """
 
 import json
-from .game import Observable
+from .game import Observable, Game
 from .config import GAMEDATA_PATH
 
 with open(GAMEDATA_PATH+'characters.json', 'r', encoding='utf-8') as j:
@@ -48,10 +48,17 @@ class Character(Observable):
         """)
 
 
-    def kick(self, enemy) -> None:
+    def kick(self, enemy) -> None: 
         """
         Пинание
         """
+        if enemy: 
+            base_damage = self.params["attributes"]["str"]
+            print(f' {str(self.name)} пнул {str(enemy.name)}.')
+            Game().handle('char_kicked')
+        else:
+            pass
+
 
     def steal():
         """

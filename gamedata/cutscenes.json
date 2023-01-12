@@ -30,11 +30,6 @@
         "Ты наткнулся на храм Б-жий"
     ], 
     "meet_cop": [],
-    "intro2": [
-        {"type": "text", "value": "1"},
-        {"type": "eval", "value": "print('хуй')"},
-        {"type": "eval", "value": "a=input('введи чето')"}
-    ],
     "actor_class_options" : [
         {
             "id": 1, 

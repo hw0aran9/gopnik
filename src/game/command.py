@@ -18,4 +18,3 @@ class Command():
     
     def handle(self, command):
         command_list = ['w', '']
-        

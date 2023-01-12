@@ -1,3 +1,6 @@
+from consolemenu import *
+from consolemenu.items import *
+
 class SceneHandler:
     def handle(self, scene, actor):
         raise NotImplementedError()
@@ -39,4 +42,3 @@ class TextHandler(SceneHandler):
     def handle(self, text_list):
         for text in text_list:
             input(text)
-
